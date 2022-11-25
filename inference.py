@@ -337,7 +337,7 @@ def getlatCodeAndModel(index, test_dataset, grid_uniformsamplepoints, latent, mo
     best_latent = latent.clone()
  
     #numiter = 200  
-    numiter = 200  
+    numiter = 1000  
     #numiter = 20  
     #if args.resamp == 4:
     #    numiter = 2000
@@ -433,7 +433,7 @@ def getlatCodeAndModel(index, test_dataset, grid_uniformsamplepoints, latent, mo
             if newmcube_points is None:
                 isbestloss = False
         if isbestloss and (args.hess_delta <= 0 or args.resamp == 4):
-            newmcube_points = getSurfaceSamplePoints(grid_uniformsamplepoints, latent, model, epoch, 10000, args, reconstructname)
+            newmcube_points = getSurfaceSamplePoints(grid_uniformsamplepoints, latent, model, epoch, 1000, args, reconstructname)
 
             if newmcube_points is None:
                 isbestloss = False

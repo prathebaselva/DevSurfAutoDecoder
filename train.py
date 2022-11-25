@@ -92,9 +92,15 @@ def trainModel(args):
         for fname in testfiles:
             fname = fname.strip()
             test_dataset = initDeepsdfTestDataSet(args, fname)
-            latCodeOptimization(args, fname)
-            args.hess_delta = 0
-            latCodeandReg0ModelOptimization(args,fname, str(args.hess_delta))
+            #args.hess_delta = 0
+            #args.eikonal_delta = 1e1
+            #args.losstype = 'dataeikonal'
+            #args.resamp = 4
+            #latCodeandReg0ModelOptimization(args,fname, str(args.eikonal_delta),'06_05')
+            #latCodeOptimization(args, fname)
+            #args.hess_delta = 0
+            #latCodeandReg0ModelOptimization(args,fname, str(args.hess_delta))
+            args.resamp = 2
             args.losstype = 'svd3'
             args.hess_delta = 1e1
             latCodeandModelOptimization(args,fname, str(args.hess_delta),'06_05')
