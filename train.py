@@ -104,6 +104,7 @@ def trainModel(args):
             args.losstype = 'svd3'
             args.hess_delta = 1e1
             latCodeandModelOptimization(args,fname, str(args.hess_delta),'06_05')
+
             #args.losstype = 'svd'
             #args.hess_delta = 1
             #latCodeandModelOptimization(args,fname, str(args.hess_delta),'06_05')
